@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const Input = styled.input.attrs(
-    props=>({
-        placeholder:props.placeholder
+    props => ({
+        placeholder: props.placeholder
     })
 )`
     display: inline-block;
@@ -31,7 +31,6 @@ export const Input = styled.input.attrs(
     }
 `
 
-
 export const Button = styled.button`
     padding: 11px 48px;
     font-size: 14px;
@@ -51,20 +50,17 @@ export const Button = styled.button`
     box-shadow: 0 1px 6px rgba(57,73,76,0.35);
 `
 
-
-
 export const Wrapper = styled.div`
     display:flex;
     height:100%;
     flex-direction:column;
 `
 
-
 export const WrapperHeaderDiv = styled.div`
     width: 100%;
     background-color: #fff;
     box-shadow: 0 1px 6px rgba(57, 73, 76, 0.35);
-`;
+`
 
 export const HeaderCenter = styled.div`
     display: flex;
@@ -78,10 +74,6 @@ export const HeaderCenter = styled.div`
     margin-right:auto;
     background-color: #fff;
 `
-
-
-
-
 
 export const ContentWrapper = styled.div`
     flex:1 0 auto;
@@ -236,7 +228,6 @@ export const Option = styled.a`
         color:#37A000;
     }
 `
-
 
 export const AddQuestionDiv = styled.div`
     width:100%;

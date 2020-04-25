@@ -12,7 +12,7 @@ export const AvatarDiv = styled.img`
     height:100px;
     width:100px;
     border-radius:50%;
-    background-image:url(${props =>  props.src});
+    background-image:url(${props => props.src});
     background-repeat:no-repeat;
     background-position:center;
     background-color:yellow;

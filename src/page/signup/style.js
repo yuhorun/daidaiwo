@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
-import partnerLogo from "../../statics/image/partner-logo.svg"
+import { Link } from 'react-router-dom'
+import partnerLogo from '../../statics/image/partner-logo.svg'
 
 export const WrapperHeaderDiv = styled.div`
     width: 100%;
     background-color: #fff;
     box-shadow: 0 1px 6px rgba(57, 73, 76, 0.35);
-`;
+`
 
 export const HeaderCenter = styled.div`
     display: flex;
@@ -21,8 +21,6 @@ export const HeaderCenter = styled.div`
     background-color: #fff;
 `
 
-
-
 export const ToLogIn = styled(Link)`
     color: #37A000;
     text-decoration: none;
@@ -31,7 +29,6 @@ export const ToLogIn = styled(Link)`
         text-decoration:underline
     }
 `
-
 
 export const ContentWrapper = styled.div`
     display:flex;
@@ -61,11 +58,9 @@ export const AccountH1 = styled.h1`
     margin-bottom:40px;
 `
 
-
-
 export const Input = styled.input.attrs(
-    props=>({
-        placeholder:props.placeholder
+    props => ({
+        placeholder: props.placeholder
     })
 )`
     display: block;
@@ -246,7 +241,7 @@ export const SvgAlone = styled.div`
         position: absolute;
         right: 15px;
         top: 0;
-        width: ${props=>(props.last?"0px":"1px")};
+        width: ${props => (props.last ? '0px' : '1px')};
         height:100%;
         background-color: #e0e0e0;
     }
@@ -288,4 +283,4 @@ export const FooterLink = styled(Link)`
     font-size: 14px;
     color: #fff;
     font-weight: 400;
-`   
+`

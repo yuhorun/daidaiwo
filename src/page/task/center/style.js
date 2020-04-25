@@ -26,7 +26,7 @@ export const Text = styled.h2`
 `
 
 export const TaskWraper = styled.a.attrs({
-    href:"/"
+    href: '/'
 })`
     display:block;
     width:100%;
@@ -85,7 +85,6 @@ export const TaskDetailDiv = styled.div`
     flex-direction:column;
     margin-bottom:15px;
 `
-
 
 export const DetalText = styled.div`
     overflow-wrap: break-word;

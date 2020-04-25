@@ -1,8 +1,7 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-
-//整个页面的Wrapper
+// 整个页面的Wrapper
 export const Wrapper = styled.div`
     display:flex;
     height:100%;
@@ -10,12 +9,12 @@ export const Wrapper = styled.div`
     background-color:#1D4354;
 `
 
-//Header的Wrapper
+// Header的Wrapper
 export const WrapperHeaderDiv = styled.div`
     width: 100%;
     background-color: #fff;
     box-shadow: 0 1px 6px rgba(57, 73, 76, 0.35);
-`;
+`
 
 export const HeaderCenter = styled.div`
     display: flex;
@@ -29,13 +28,13 @@ export const HeaderCenter = styled.div`
     background-color: #fff;
 `
 
-//Hdader下面的内容
+// Hdader下面的内容
 export const ContentWrapper = styled.div`
     flex:1 0 auto;
     width:100%;
 `
 
-//表单的Wrapper
+// 表单的Wrapper
 export const AccountWrapper = styled.div`
     display:flex;
     flex-direction:column;
@@ -49,7 +48,7 @@ export const AccountWrapper = styled.div`
     box-shadow: 0 1px 6px rgba(57,73,76,0.35);
 `
 
-//Input的Wrapper  为了absolute icon-font 使用的是before， 另一种absolute icon-font的方式是把icon-font当成子组件  用absolute
+// Input的Wrapper  为了absolute icon-font 使用的是before， 另一种absolute icon-font的方式是把icon-font当成子组件  用absolute
 export const InputWarapper = styled.div`
     position: relative;
     display:flex;
@@ -95,7 +94,6 @@ export const Input = styled.input`
     border:none;
 `
 
-
 export const Button = styled.button`
     padding: 11px 48px;
     font-size: 14px;
@@ -113,7 +111,6 @@ export const Button = styled.button`
     transition: all .15s;
     box-shadow: 0 1px 6px rgba(57,73,76,0.35);
 `
-
 
 export const SubmitBtn = styled(Button)`
     color: #fff;
@@ -163,7 +160,7 @@ export const KeepDiv = styled.div`
     font-size:13px;
 `
 
-//勾选框  没有用checkbox  用的是div 定义样式：
+// 勾选框  没有用checkbox  用的是div 定义样式：
 export const CheckBox = styled.div`
     position: relative;
     width: 13px;
@@ -175,13 +172,13 @@ export const CheckBox = styled.div`
     background-color: #fff;
     margin-right: 6px;
     ::before {
-        content: "${props=>props.activate?"\\e6a6":""}";
+        content: "${props => props.activate ? '\\e6a6' : ''}";
         font-family:"iconfont";
         position: absolute;
         top: 0;
         left: 0;
-        color:${props=>props.activate?"#fff":"#37a000"};
-        background: ${props=>props.activate?"#37a000":"#fff"};
+        color:${props => props.activate ? '#fff' : '#37a000'};
+        background: ${props => props.activate ? '#37a000' : '#fff'};
         width: 100%;
         height: 100%;
         border: 1px solid #37a000;
@@ -207,7 +204,6 @@ export const LogAndSignDiv = styled.div`
     margin-bottom:20px;
     
 `
-
 
 export const LogAndSign = styled(Link)`
     padding: 10px;

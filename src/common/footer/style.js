@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export const FooterWrapper = styled.div`
     background-color:#1D4354;
@@ -27,4 +27,4 @@ export const FooterLink = styled(Link)`
     &:hover{
         text-decoration:underline;
     }
-`   
+`

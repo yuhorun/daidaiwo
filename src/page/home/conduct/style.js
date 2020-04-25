@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const BackgroundImageDiv = styled.div`
     min-height:450px;
@@ -29,7 +29,6 @@ export const TextDiv = styled.div`
     margin-right: auto;
     margin-bottom:5px;
 `
-
 
 export const TittleSpan = styled.div`
     font-size: 52px;

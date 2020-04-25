@@ -7,11 +7,11 @@ import {
     InputAndBtnDiv,
     Input,
     Btn
-} from "./style"
+} from './style'
 
-class FindWork extends React.Component{
-    render(){
-        return(
+class FindWork extends React.Component {
+    render () {
+        return (
             <WrapperDiv>
                 <TextDiv>Find Work</TextDiv>
                 <SearchDiv>

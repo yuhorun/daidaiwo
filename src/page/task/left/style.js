@@ -12,7 +12,7 @@ export const TopListDiv = styled.div`
     height:auto;
 `
 
-export const Item= styled(Link)`
+export const Item = styled(Link)`
     color: #37A000;
     position: relative;
     display:block;
@@ -42,7 +42,6 @@ export const Item= styled(Link)`
         top: 0;
     }
 `
-
 
 export const SubListDiv = styled.div`
     margin-top:30px;

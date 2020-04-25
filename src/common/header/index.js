@@ -125,7 +125,7 @@ const mapDispatchToProps = (dispatch) => ({
 Header.propTypes = {
     isScrolled: PropTypes.bool,
     handlerScrolled: PropTypes.func,
-    isLoged: PropTypes.bool,
+    isLoged: PropTypes.bool
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

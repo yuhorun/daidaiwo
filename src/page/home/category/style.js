@@ -35,7 +35,7 @@ export const ItemFlex = styled.div`
 `
 
 export const ItemA = styled.a.attrs({
-    href:"/"
+    href: '/'
 })`
     display:inline-block;
     border-radius: 2px;
@@ -43,7 +43,7 @@ export const ItemA = styled.a.attrs({
 `
 
 export const ImageDiv = styled.img.attrs(props => ({
-  // we can define static props
+    // we can define static props
     src: props.src,
     alt: props.alt
 }))`
@@ -62,7 +62,7 @@ export const TextDiv = styled.div`
 `
 
 export const EndTextA = styled.a.attrs({
-    href:"/"
+    href: '/'
 })`
     color: #37a000;
     &:hover{

@@ -1,5 +1,4 @@
-import styled from "styled-components";
-
+import styled from 'styled-components'
 
 export const Layout = styled.div`
     position:relative;
@@ -7,7 +6,6 @@ export const Layout = styled.div`
     flex: 1 0 auto;
     background-color: #F2F2F2;
 `
-
 
 export const Center = styled.div`
     width:990px;
@@ -135,7 +133,6 @@ export const DetailTextWrapper = styled.div`
         }
     }
 `
-
 
 export const DetailProps = styled.div`
     font-weight: 700;

@@ -25,7 +25,6 @@ export const SearchDiv = styled.div`
     padding-right:15px;
 `
 
-
 export const InputAndBtnDiv = styled.div`
     display:flex;
     position:relative;
@@ -35,7 +34,7 @@ export const InputAndBtnDiv = styled.div`
 `
 
 export const Input = styled.input.attrs({
-    placeholder:"Search for jobs"
+    placeholder: 'Search for jobs'
 })`
     height: 40px;
     width:100%;
@@ -62,7 +61,7 @@ export const Input = styled.input.attrs({
     }
 `
 export const Btn = styled.a.attrs({
-	href: "/"
+    href: '/'
 })` 
     display: flex;
     align-items:center;

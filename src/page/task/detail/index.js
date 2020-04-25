@@ -5,7 +5,7 @@ import {
     BackTittle
 } from './style'
 
-const Detail = function(){
+const Detail = function () {
     return (
         <Wrapper>
             <BackTittle>
@@ -14,7 +14,6 @@ const Detail = function(){
             </BackTittle>
         </Wrapper>
     )
-    
 }
 
 export default Detail
