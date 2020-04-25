@@ -1,17 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import axios from 'axios'
+import reactDOM from 'react-dom'
+import { Provider } from 'react-redux'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import GlobalStyle from './style'
+import store from './store'
+import Routers from './router'
+import { GlobalAction } from './redact'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+reactDOM.render(
+    <Provider store={store}>
+        <GlobalStyle />
+        <Routers />
+    </Provider>,
+    document.getElementById('root'),
+    () => {
+        axios({
+            url: '/getuserinfo',
+            baseURL: 'http://localhost:8000',
+            method: 'GET',
+            withCredentials: true // cookie 相关  如不设置  无法发送cookie
+        }).then(res => {
+            if (res.data.code === 200) {
+                store.dispatch(GlobalAction.isLoged(true)) // 调用dispatch有几种方式  可以通过store的dispatch直接调用
+            }
+        })
+    }
+)
