@@ -1,0 +1,25 @@
+*{
+    font-family: Gotham SSm;
+}
+
+@font-face {
+    font-family: "Gotham SSm";
+    src: url("./statics/font/gotham-medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Gotham SSm";
+    src: url("./src/statics/font/gotham-regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Gotham SSm";
+    src: url("./statics/font/gotham-bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
