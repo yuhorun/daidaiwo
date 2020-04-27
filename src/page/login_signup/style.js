@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import textLogo from '../../statics/image/DDWlogo.png'
 
 // 整个页面的Wrapper
 export const Wrapper = styled.div`
@@ -26,6 +27,26 @@ export const HeaderCenter = styled.div`
     margin-left:auto;
     margin-right:auto;
     background-color: #fff;
+`
+
+export const LogoDiv = styled.div`
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    min-height: 70px;
+`
+
+export const LogoA = styled(Link)`
+    display: inline-block;
+    width: 160px;
+    height: 40px;
+    color: #37a000;
+    font-weight: 500;
+    background-image: url(${textLogo});
+    background-repeat: no-repeat;
+    background-size: 160px 40px;
+    background-color: transparent;
+}
 `
 
 // Hdader下面的内容
@@ -55,7 +76,7 @@ export const InputWarapper = styled.div`
     align-items:center;
     width: 100%;
     height: 40px;
-    padding: 10px 0px 10px 30px;
+    padding: 10px 0 10px 30px;
     margin-bottom:30px;
     border: 1px solid #E0E0E0;
     border-radius: 5px;
@@ -75,7 +96,7 @@ export const InputWarapper = styled.div`
     &::before {
         content: "${props => props.text}";
         font-size:15px;
-        font-family: "iconfont";
+        font-family: "iconfont",serif;
         position: absolute;
         top: 10px;
         left: 8px;
@@ -173,7 +194,7 @@ export const CheckBox = styled.div`
     margin-right: 6px;
     ::before {
         content: "${props => props.activate ? '\\e6a6' : ''}";
-        font-family:"iconfont";
+        font-family:"iconfont",serif;
         position: absolute;
         top: 0;
         left: 0;

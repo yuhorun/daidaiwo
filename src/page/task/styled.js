@@ -3,8 +3,7 @@ import styled from 'styled-components'
 export const Layout = styled.div`
     position:relative;
     padding-top: 110px;
-    flex: 1 0 auto;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
 `
 
 export const Center = styled.div`

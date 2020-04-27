@@ -9,7 +9,7 @@ class Right extends React.Component {
     render () {
         return (
             <Wrapper>
-                <AvatarDiv src={img}></AvatarDiv>
+                <AvatarDiv src={img}/>
             </Wrapper>
         )
     }

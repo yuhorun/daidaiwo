@@ -15,5 +15,4 @@ export const AvatarDiv = styled.img`
     background-image:url(${props => props.src});
     background-repeat:no-repeat;
     background-position:center;
-    background-color:yellow;
 `

@@ -6,10 +6,12 @@ import {
     OperationDiv, Post, PostDiv,
     SignAndLog, SignAndLogDiv, WrapperDiv
 } from '../home/header/style'
+
 import {
     useHistory, Link,
     useParams
 } from 'react-router-dom'
+
 import { action } from './redact'
 import { connect } from 'react-redux'
 
@@ -30,25 +32,26 @@ import {
 } from './styled'
 
 import Left from './left'
+import FindWork from './findWork'
 import ContentCenter from './center'
 import Right from './right'
+import PropTypes from 'prop-types'
 
 const Task = function (props) {
-    let subPageid
-    const { subpage } = useParams()
-    switch (subpage) {
-    case 'mytask' :subPageid = 1; break
-    case 'recommend':subPageid = 2; break
-    case 'like':subPageid = 3; break
-    case 'software':subPageid = 4; break
-    case 'ai':subPageid = 5; break
-    case 'img':subPageid = 6; break
-    case 'datacollection':subPageid = 7; break
-    case 'dataanalyze':subPageid = 8; break
-    default:subPageid = 2; break
+    let subPage
+    const { router } = useParams()
+    switch (router) {
+    case 'mytask' :subPage = { id: 1, router: 'mytask', text: '我的任务' }; break
+    case 'recommend':subPage = { id: 2, router: 'recommend', text: '推荐' }; break
+    case 'like':subPage = { id: 3, router: 'like', text: '喜欢' }; break
+    case 'software':subPage = { id: 4, router: 'software', text: '程序开发' }; break
+    case 'ai':subPage = { id: 5, router: 'ai', text: '人工智能' }; break
+    case 'img':subPage = { id: 6, router: 'img', text: '图像处理' }; break
+    case 'datacollection':subPage = { id: 7, router: 'datacollection', text: '数据采集' }; break
+    case 'dataanalyze':subPage = { id: 8, router: 'dataanalyze', text: '数据分析' }; break
+    default: subPage = { id: 2, router: 'recommend', text: '推荐任务' }; break
     }
     const taskId = null
-    // eslint-disable-next-line react/prop-types
     props.handlerOpen(taskId)
 
     const history = useHistory()
@@ -82,11 +85,10 @@ const Task = function (props) {
     return (
         <Fragment>
             <Layout>
-
                 <WrapperDiv>
                     <CenterDiv>
                         <LogoDiv>
-                            <LogoA/>
+                            <LogoA to={'/'}/>
                         </LogoDiv>
                         <OperationDiv>
                             <SignAndLogDiv>
@@ -107,14 +109,15 @@ const Task = function (props) {
                 </WrapperDiv>
 
                 <Center>
+                    <FindWork/>
                     <SubCenter>
-                        <Left subPageid={subPageid}/>
-                        <ContentCenter/>
+                        <Left subPageid={subPage.id}/>
+                        <ContentCenter subPage={ subPage }/>
                         <Right/>
                     </SubCenter>
                 </Center>
             </Layout>
-            <BackDrop onClick={HandlerClick} className={taskId ? 'open' : ''}/>
+            <BackDrop onClick={() => HandlerClick()} className={taskId ? 'open' : ''}/>
             <Slide className={taskId ? 'open' : ''}>
                 <DtailWrapperDiv >
                     <DetailHeader><Link to="/task">返回</Link><Link to={'/'}>分享</Link></DetailHeader>
@@ -174,6 +177,10 @@ const mapDispatchToProps = (dispatch) => ({
         }
     }
 
+})
+
+Task.propTypes = {
+    handlerOpen: PropTypes.func
 }
-)
+
 export default connect(null, mapDispatchToProps)(Task)

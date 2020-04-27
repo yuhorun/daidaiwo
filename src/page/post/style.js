@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import textLogo from '../../statics/image/DDWlogo.png'
 
 export const Input = styled.input.attrs(
     props => ({
@@ -9,10 +11,7 @@ export const Input = styled.input.attrs(
     width: 100%;
     min-height: 40px;
     height: 40px;
-    padding-left:48px;
-    padding-right:0px;
-    padding-top:10px;
-    padding-bottom:10px;
+    padding: 10px 0 10px 48px;
     margin-bottom:30px;
     border: 1px solid #E0E0E0;
     border-radius: 5px;
@@ -52,7 +51,6 @@ export const Button = styled.button`
 
 export const Wrapper = styled.div`
     display:flex;
-    height:100%;
     flex-direction:column;
 `
 
@@ -66,13 +64,32 @@ export const HeaderCenter = styled.div`
     display: flex;
     align-items:center;
     justify-content:space-between;
-    width:990px;
+    width:1170px;
     height:70px;
     padding-left:15px;
     padding-right:15px;
     margin-left:auto;
     margin-right:auto;
     background-color: #fff;
+`
+export const LogoDiv = styled.div`
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    min-height: 70px;
+`
+
+export const LogoA = styled(Link)`
+    display: inline-block;
+    width: 160px;
+    height: 40px;
+    color: #37a000;
+    font-weight: 500;
+    background-image: url(${textLogo});
+    background-repeat: no-repeat;
+    background-size: 160px 40px;
+    background-color: transparent;
+}
 `
 
 export const ContentWrapper = styled.div`
@@ -83,10 +100,7 @@ export const ContentWrapper = styled.div`
 
 export const ContentCenter = styled.div`
     width:990px;
-    margin-top:30px;
-    margin-bottom:30px;
-    margin-right:auto;
-    margin-left:auto;
+    margin: 30px auto;
     padding-right:15px;
     padding-left:15px;
 `
@@ -296,13 +310,10 @@ export const AddAndSubtractDiv = styled.div`
 `
 
 export const AddAndSubtractBtn = styled(Button)`
-    width:fit-content;
     width:30px;
     padding:6px;
     font-size:18px;
     background-color: transparent;
-    border-color: transparent;
-    border:none;
     border-radius: 15px;
     box-shadow:none;
     color:#fff;

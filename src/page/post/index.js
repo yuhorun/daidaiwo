@@ -1,11 +1,12 @@
 import React from 'react'
 import axios from 'axios'
-import { LogoDiv, LogoA } from '../home/header/style'
 
 import {
     Wrapper,
     WrapperHeaderDiv,
     HeaderCenter,
+    LogoDiv,
+    LogoA,
     ContentWrapper,
     ContentCenter,
     StepDiv,
@@ -87,7 +88,7 @@ const Post = function () {
             <WrapperHeaderDiv>
                 <HeaderCenter>
                     <LogoDiv>
-                        <LogoA/>
+                        <LogoA to={'/'}/>
                     </LogoDiv>
                 </HeaderCenter>
             </WrapperHeaderDiv>
@@ -103,9 +104,9 @@ const Post = function () {
                             <DoWhatInput onChange={(e) => { setState({ ...state, tittle: e.target.value }) }}/>
                             <DoWhat>示例：</DoWhat>
                             <ul style={{ marginLeft: '30px', fontSize: '13px', color: '#222' }}>
-                                <li style={{ paddingBottom: '5px' }}>开发人员需要创建响应的Word Press主题 </li>
-                                <li style={{ paddingBottom: '5px' }}>cad设计师创建住宅建筑三维模型 </li>
-                                <li style={{ paddingBottom: '5px' }}>需要设计新的公司标志 </li>
+                                <li style={{ paddingBottom: '5px' }}>人脸数据采集</li>
+                                <li style={{ paddingBottom: '5px' }}>短视频app开发</li>
+                                <li style={{ paddingBottom: '5px' }}>高速公路场景下车辆识别</li>
                             </ul>
                             <DoWhat style={{ marginTop: '10px' }}>选择类别：</DoWhat>
                             <DropDownDiv>
@@ -129,17 +130,16 @@ const Post = function () {
                         <StepContent>
                             <DoWhat>在下面框内输入您的任务详情  包括：</DoWhat>
                             <ul style={{ marginBottom: '20px', marginLeft: '30px', fontSize: '13px', color: '#222' }}>
-                                <li style={{ paddingBottom: '5px' }}>开发人员需要创建响应的Word Press主题 </li>
-                                <li style={{ paddingBottom: '5px' }}>cad设计师创建住宅建筑三维模型 </li>
-                                <li style={{ paddingBottom: '5px' }}>需要设计新的公司标志 </li>
+                                <li style={{ paddingBottom: '5px' }}>实现哪些功能 </li>
+                                <li style={{ paddingBottom: '5px' }}>基于什么技术 </li>
+                                <li style={{ paddingBottom: '5px' }}>交付内容包括哪些 </li>
                             </ul>
                             <TextArea onChange={(e) => setState({ ...state, detail: e.target.value })}/>
 
                             <DoWhat>相关提问（可选）</DoWhat>
                             <ul style={{ marginBottom: '0px', marginLeft: '30px', fontSize: '13px', color: '#222' }}>
-                                <li style={{ paddingBottom: '5px' }}>开发人员需要创建响应的Word Press主题 </li>
-                                <li style={{ paddingBottom: '5px' }}>cad设计师创建住宅建筑三维模型 </li>
-                                <li style={{ paddingBottom: '5px' }}>需要设计新的公司标志 </li>
+                                <li style={{ paddingBottom: '5px' }}>你有相关的工作经验么？介绍一下。 </li>
+                                <li style={{ paddingBottom: '5px' }}>我这个项目你打算怎么做，整体的流程是什么？ </li>
                             </ul>
                             <AddQuestionDiv>
                                 <div>

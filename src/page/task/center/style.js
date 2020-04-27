@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const FlexDiv = styled.div`
     flex: 0 0 66.66667%;
@@ -25,9 +26,7 @@ export const Text = styled.h2`
     font-weight: 400;
 `
 
-export const TaskWraper = styled.a.attrs({
-    href: '/'
-})`
+export const TaskWraper = styled(Link)`
     display:block;
     width:100%;
     border-bottom: 1px solid #E0E0E0;
@@ -68,7 +67,7 @@ export const Btn = styled.button`
     align-items:center;
     font-family: "iconfont",serif;
     box-shadow:  0 1px 6px rgba(57,73,76,0.35);
-    font-size: 14px;
+    font-size: 6px;
     cursor: pointer;
     outline:none;
     background-color:transparent;
@@ -77,6 +76,10 @@ export const Btn = styled.button`
     z-index:1;
     &:hover {
         box-shadow: 0 2px 10px 1px rgba(57,73,76,0.4), 0 1px 2px rgba(57,73,76,0.25);;
+    }
+    
+    &.like {
+        
     }
 
 `
@@ -91,7 +94,7 @@ export const DetalText = styled.div`
     word-wrap: break-word;
     word-break: break-word;
     font-size: 13px;
-    line-height: 1.42857;
+    line-height: 1.8;
     color: #222;
 `
 
@@ -123,4 +126,5 @@ export const CategoryItem = styled.div`
 export const DetailEnd = styled.div`
     line-height:20px;
     font-size:12px;
+    color: #222;
 `

@@ -4,12 +4,12 @@ import { useParams, useHistory } from 'react-router-dom'
 import store from '../../store'
 import { GlobalAction } from '../../redact'
 
-import { LogoDiv, LogoA } from '../home/header/style'
-
 import {
     Wrapper,
     WrapperHeaderDiv,
     HeaderCenter,
+    LogoDiv,
+    LogoA,
     AccountWrapper,
     Input,
     SubmitBtn,
@@ -41,10 +41,6 @@ const LogInAndSignup = function () {
         signUpMsg: ''
 
     })
-
-    // useEffect(()=>{
-    //     console.log("use effect")
-    // },[state.logInMsg,state.signUpMsg])
 
     const handlerLogInBtn = () => {
         axios({
@@ -81,7 +77,7 @@ const LogInAndSignup = function () {
             <WrapperHeaderDiv>
                 <HeaderCenter>
                     <LogoDiv>
-                        <LogoA/>
+                        <LogoA to={'/'}/>
                     </LogoDiv>
                 </HeaderCenter>
             </WrapperHeaderDiv>
@@ -95,17 +91,18 @@ const LogInAndSignup = function () {
                 {(action === 'login')
                 // 登录
                     ? <React.Fragment>
-                        <InputWarapper text="\e607"><Input value={state.logInPhoneNumber} onChange={(e) => setState({ ...state, logInPhoneNumber: e.target.value })} placeholder="用户名或手机号"/></InputWarapper>
+                        <InputWarapper text="\e607"><Input value={state.logInPhoneNumber} onChange={(e) => setState({ ...state, logInPhoneNumber: e.target.value })} placeholder="用户名或手机号码"/></InputWarapper>
                         <InputWarapper text="\e60c"><Input value={state.logInPassword} onChange={(e) => setState({ ...state, logInPassword: e.target.value })} placeholder="密码" type="password"/></InputWarapper>
                         <KeepAndForgetDiv>
                             <KeepDiv onClick={() => setState({ ...state, activate: !state.activate })}>
                                 <CheckBox activate={state.activate}/>
                             保持登陆状态
                             </KeepDiv>
-                            <ForgetDiv to="/user/login">忘记密码?</ForgetDiv>
+                            <ForgetDiv to="/user/signup">忘记密码?</ForgetDiv>
                         </KeepAndForgetDiv>
                         <SubmitBtn onClick={() => handlerLogInBtn()}>登录</SubmitBtn>
                     </React.Fragment>
+                    // eslint-disable-next-line operator-linebreak
                     :
                 // 注册
                     <React.Fragment>

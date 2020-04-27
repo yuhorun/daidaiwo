@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
     FlexDiv,
     BorderDiv,
@@ -15,89 +15,99 @@ import {
     MoreA,
     CategoryItem
 } from './style'
+import PropTypes from 'prop-types'
+import axios from 'axios'
 
-class ContentCenter extends React.Component {
-    render () {
-        return (
-            <FlexDiv>
-                <BorderDiv>
-                    <Tittle>
-                        <Text>Recommended Jobs</Text>
-                    </Tittle>
-
-                    <TaskWraper>
-                        <TaskTittleDiv>
-                            <TaskTittleA>transfer learning with CNN</TaskTittleA>
-                            <Btn >&#xe60d;</Btn>
-                        </TaskTittleDiv>
-                        <TaskDetailDiv>
-                            <DetalText>I want to to create a demo project of transfer
-                                learning with proper evaluation. Ideally I want the test accuracy on
-                                a popular image classification dataset (such as MS COCO) by a pretrained CNN
-                                (such as Keras Inception) as part of transfer learning.
-                                I want one of the Keras shipped model that can flexibly trained on other
-                                image classification  dataset. Although I want pretrainted model for minimal
-                                training hassle...<MoreA>查看更过</MoreA>
-                            </DetalText>
-                        </TaskDetailDiv>
-                        <DetailCategory>
-                            <CategoryItem>Deep Neural Networks</CategoryItem>
-                            <CategoryItem>TensorFlow</CategoryItem>
-                            <CategoryItem>Neural Networks</CategoryItem>
-                        </DetailCategory>
-                        <DetailEnd>发布时间:<strong>6</strong>天前&emsp;浏览人数:<strong>18</strong>&emsp;竞标人数:<strong>3</strong></DetailEnd>
-                    </TaskWraper>
-
-                    <TaskWraper>
-                        <TaskTittleDiv>
-                            <TaskTittleA>transfer learning with CNN</TaskTittleA>
-                            <Btn >&#xe60d;</Btn>
-                        </TaskTittleDiv>
-                        <TaskDetailDiv>
-                            <DetalText>I want to to create a demo project of transfer
-                                learning with proper evaluation. Ideally I want the test accuracy on
-                                a popular image classification dataset (such as MS COCO) by a pretrained CNN
-                                (such as Keras Inception) as part of transfer learning.
-                                I want one of the Keras shipped model that can flexibly trained on other
-                                image classification  dataset. Although I want pretrainted model for minimal
-                                training hassle...<MoreA>查看更过</MoreA>
-                            </DetalText>
-                        </TaskDetailDiv>
-                        <DetailCategory>
-                            <CategoryItem>Deep Neural Networks</CategoryItem>
-                            <CategoryItem>TensorFlow</CategoryItem>
-                            <CategoryItem>Neural Networks</CategoryItem>
-                        </DetailCategory>
-                        <DetailEnd>发布时间:<strong>6</strong>天前&emsp;浏览人数:<strong>18</strong>&emsp;竞标人数:<strong>3</strong></DetailEnd>
-                    </TaskWraper>
-
-                    <TaskWraper>
-                        <TaskTittleDiv>
-                            <TaskTittleA>transfer learning with CNN</TaskTittleA>
-                            <Btn >&#xe60d;</Btn>
-                        </TaskTittleDiv>
-                        <TaskDetailDiv>
-                            <DetalText>I want to to create a demo project of transfer
-                                learning with proper evaluation. Ideally I want the test accuracy on
-                                a popular image classification dataset (such as MS COCO) by a pretrained CNN
-                                (such as Keras Inception) as part of transfer learning.
-                                I want one of the Keras shipped model that can flexibly trained on other
-                                image classification  dataset. Although I want pretrainted model for minimal
-                                training hassle...<MoreA>查看更过</MoreA>
-                            </DetalText>
-                        </TaskDetailDiv>
-                        <DetailCategory>
-                            <CategoryItem>Deep Neural Networks</CategoryItem>
-                            <CategoryItem>TensorFlow</CategoryItem>
-                            <CategoryItem>Neural Networks</CategoryItem>
-                        </DetailCategory>
-                        <DetailEnd>发布时间:<strong>6</strong>天前&emsp;浏览人数:<strong>18</strong>&emsp;竞标人数:<strong>3</strong></DetailEnd>
-                    </TaskWraper>
-
-                </BorderDiv>
-            </FlexDiv>
+const ContentCenter = (props) => {
+    // const taskList = [{
+    //     tittle: '',
+    //     detailText: '',
+    //     categories: [],
+    //     time: 0,
+    //     lookman: 0,
+    //     competeman: 0
+    // }]
+    let taskList = [{}, {}, {}, {}, {}]
+    const getTaskList = () => {
+        axios({
+            url: props.subPage.router,
+            baseURL: 'http://localhost:8000/task',
+            method: 'GET',
+            withCredentials: true
+        }).then(
+            res => {
+                if (res.data.code === 208) {
+                    taskList = res.data.taskList
+                }
+            }
         )
     }
+
+    useEffect(() => {
+        getTaskList()
+        // eslint-disable-next-line
+    }, [])
+
+    return (
+        <FlexDiv>
+            <BorderDiv>
+                <Tittle>
+                    <Text>{props.subPage.text}</Text>
+                </Tittle>
+
+                <TaskWraper>
+                    <TaskTittleDiv>
+                        <TaskTittleA>高速公路场景下车辆检测</TaskTittleA>
+                        <Btn >&#xe60d;</Btn>
+                    </TaskTittleDiv>
+                    <TaskDetailDiv>
+                        <DetalText>我们是做无人智能驾驶的, 高速公路场景下车辆检测高速公路场景下车辆检测高速公
+                            路场景下车辆检测. 高速公路场景下车辆检测高速公路场景下车辆检测,
+                            高速公路场景下车辆检测高速公路场景下车辆检测高速公路场景下车辆检测
+                            高速公路场景下车辆.检测高速公路场景下车辆检测高速公路场景下车辆检测...<MoreA>查看更过</MoreA>
+                        </DetalText>
+                    </TaskDetailDiv>
+                    <DetailCategory>
+                        <CategoryItem>神经网络</CategoryItem>
+                        <CategoryItem>TensorFlow</CategoryItem>
+                        <CategoryItem>python</CategoryItem>
+                    </DetailCategory>
+                    <DetailEnd>发布时间:<strong> 6</strong>天前&emsp;浏览人数:<strong> 18</strong>&emsp;竞标人数:<strong> 3</strong></DetailEnd>
+                </TaskWraper>
+
+                {
+                    taskList.map((value, index) => {
+                        return (
+                            <TaskWraper key={index}>
+                                <TaskTittleDiv>
+                                    <TaskTittleA>高速公路场景下车辆检测</TaskTittleA>
+                                    <Btn >&#xe60d;</Btn>
+                                </TaskTittleDiv>
+                                <TaskDetailDiv>
+                                    <DetalText>我们是做无人智能驾驶的, 高速公路场景下车辆检测高速公路场景下车辆检测高速公
+                                        路场景下车辆检测. 高速公路场景下车辆检测高速公路场景下车辆检测,
+                                        高速公路场景下车辆检测高速公路场景下车辆检测高速公路场景下车辆检测
+                                        高速公路场景下车辆.检测高速公路场景下车辆检测高速公路场景下车辆检测...<MoreA>查看更过</MoreA>
+                                    </DetalText>
+                                </TaskDetailDiv>
+                                <DetailCategory>
+                                    <CategoryItem>神经网络</CategoryItem>
+                                    <CategoryItem>TensorFlow</CategoryItem>
+                                    <CategoryItem>python</CategoryItem>
+                                </DetailCategory>
+                                <DetailEnd>发布时间:<strong> 6</strong>天前&emsp;浏览人数:<strong> 18</strong>&emsp;竞标人数:<strong> 3</strong></DetailEnd>
+                            </TaskWraper>
+                        )
+                    })
+                }
+
+            </BorderDiv>
+        </FlexDiv>
+    )
+}
+
+ContentCenter.propTypes = {
+    subPage: PropTypes.object
 }
 
 export default ContentCenter

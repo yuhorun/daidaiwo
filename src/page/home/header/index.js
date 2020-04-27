@@ -97,11 +97,11 @@ const Header = function (props) {
             <NavDiv className={isScrolled ? 'Scrolled' : ''}>
                 <NavCenterItemDiv>
                     <NavItemL to={'/task'}>所有分类</NavItemL>
-                    <NavItemL to={'/task'}>程序开发</NavItemL>
-                    <NavItemL to={'/task'}>人工智能</NavItemL>
-                    <NavItemL to={'/task'}>图像处理</NavItemL>
-                    <NavItemL to={'/task'}>数据采集</NavItemL>
-                    <NavItemL to={'/task'}>数据分析</NavItemL>
+                    <NavItemL to={'/task/software'}>程序开发</NavItemL>
+                    <NavItemL to={'/task/ai'}>人工智能</NavItemL>
+                    <NavItemL to={'/task/img'}>图像处理</NavItemL>
+                    <NavItemL to={'/task/datacollection'}>数据采集</NavItemL>
+                    <NavItemL to={'/task/dataanalyze'}>数据分析</NavItemL>
                 </NavCenterItemDiv>
             </NavDiv>
         </WrapperDiv>
