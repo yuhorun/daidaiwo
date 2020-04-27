@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import Avatar from '@material-ui/core/Avatar'
 import axios from 'axios'
-// import { useHistory } from 'react-router-dom'
 
-import { action } from './redact'
-import { GlobalAction } from '../../redact'
-
+import { GlobalAction } from '../../../redact'
 import { connect } from 'react-redux'
+
 import {
     WrapperDiv,
     CenterDiv,
@@ -23,14 +21,22 @@ import {
     Post,
     NavDiv,
     NavCenterItemDiv,
-    NavItemA,
+    NavItemL,
     AvatarDiv,
     TapAvatar,
     TapItem
 } from './style'
 
 const Header = function (props) {
-    // const history = useHistory()
+    const [isScrolled, setIsScroll] = useState(false)
+
+    const handlerScrolled = () => {
+        if (document.documentElement.scrollTop === 0) {
+            setIsScroll(false)
+        } else if (document.documentElement.scrollTop > 0) {
+            setIsScroll(true)
+        }
+    }
 
     const logouthandler = () => {
         axios({
@@ -48,14 +54,15 @@ const Header = function (props) {
     }
     // 防止重复渲染，
     useEffect(() => {
-        window.addEventListener('scroll', props.handlerScrolled)
+        window.addEventListener('scroll', handlerScrolled)
+        return () => { window.removeEventListener('scroll', handlerScrolled) }
         // eslint-disable-next-line
     }, [])
     return (
         <WrapperDiv>
             <CenterDiv>
                 <LogoDiv>
-                    <LogoA/>
+                    <LogoA to = "/" />
                 </LogoDiv>
                 <OperationDiv>
                     <InputDiv>
@@ -65,7 +72,7 @@ const Header = function (props) {
                     <SignAndLogDiv>
                         {props.isLoged
                             ? <AvatarDiv>
-                                <Avatar onClick={() => { console.log('taped avatar') }}>H</Avatar>
+                                <Avatar>H</Avatar>
                                 <TapAvatar >
                                     <TapItem >我的任务</TapItem>
                                     <TapItem onClick={() => logouthandler()}>退出</TapItem>
@@ -87,15 +94,14 @@ const Header = function (props) {
                     </SignAndLogDiv>
                 </OperationDiv>
             </CenterDiv>
-            <NavDiv className={props.isScrolled ? 'Scrolled' : ''}>
+            <NavDiv className={isScrolled ? 'Scrolled' : ''}>
                 <NavCenterItemDiv>
-                    <NavItemA>所有分类</NavItemA>
-                    <NavItemA>网页/程序开发</NavItemA>
-                    <NavItemA>艺术设计</NavItemA>
-                    <NavItemA>人工智能</NavItemA>
-                    <NavItemA>数据分析</NavItemA>
-                    <NavItemA>文章/写作</NavItemA>
-                    <NavItemA>手工搬砖</NavItemA>
+                    <NavItemL to={'/task'}>所有分类</NavItemL>
+                    <NavItemL to={'/task'}>程序开发</NavItemL>
+                    <NavItemL to={'/task'}>人工智能</NavItemL>
+                    <NavItemL to={'/task'}>图像处理</NavItemL>
+                    <NavItemL to={'/task'}>数据采集</NavItemL>
+                    <NavItemL to={'/task'}>数据分析</NavItemL>
                 </NavCenterItemDiv>
             </NavDiv>
         </WrapperDiv>
@@ -104,19 +110,11 @@ const Header = function (props) {
 
 const mapStateToProps = (state) => {
     return {
-        isScrolled: state.headerState.isScrolled,
         isLoged: state.globalState.isLoged
     }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    handlerScrolled () {
-        if (document.documentElement.scrollTop === 0) {
-            dispatch(action.scroll(false))
-        } else if (document.documentElement.scrollTop > 0) {
-            dispatch(action.scroll(true))
-        }
-    },
     handlerLogout () {
         dispatch(GlobalAction.isLoged(false))
     }
@@ -125,7 +123,8 @@ const mapDispatchToProps = (dispatch) => ({
 Header.propTypes = {
     isScrolled: PropTypes.bool,
     handlerScrolled: PropTypes.func,
-    isLoged: PropTypes.bool
+    isLoged: PropTypes.bool,
+    handlerLogout: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header)

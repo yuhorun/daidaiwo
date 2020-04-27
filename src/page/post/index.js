@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { LogoDiv, LogoA } from '../../common/header/style'
+import { LogoDiv, LogoA } from '../home/header/style'
 
 import {
     Wrapper,
@@ -31,7 +31,7 @@ import {
 } from './style'
 
 const Post = function () {
-    const categoryList = ['red', 'blue', 'yellow', 'green', 'red', 'blue', 'yellow', 'green', '不确定']
+    const categoryList = ['程序开发', '人工智能', '图像处理', '数据采集', '数据分析', '不确定']
     const [state, setState] = React.useState({
         categoryDisplay: '',
         tittle: '',

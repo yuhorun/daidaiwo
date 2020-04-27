@@ -1,23 +1,15 @@
 import React from 'react'
-import Header from '../../common/header'
+import Header from './header'
 import Conduct from './conduct'
-import Category from './category'
 
-import {
-    Layout,
-    Content
-} from './styled'
-import Footer from '../../common/footer'
+import Footer from './footer'
 
 const Home = () => (
-    <Layout>
+    <div style={{ paddingTop: '110px' }}>
         <Header />
-        <Content>
-            <Conduct />
-            <Category />
-        </Content>
-        <Footer/>
-    </Layout>
+        <Conduct />
+        <Footer />
+    </div>
 )
 
 export default Home

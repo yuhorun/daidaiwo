@@ -1,5 +1,5 @@
 import React from 'react'
-import { LogoDiv, LogoA } from '../../common/header/style'
+import { LogoDiv, LogoA } from '../home/header/style'
 
 import {
     WrapperHeaderDiv,

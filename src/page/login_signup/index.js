@@ -4,7 +4,7 @@ import { useParams, useHistory } from 'react-router-dom'
 import store from '../../store'
 import { GlobalAction } from '../../redact'
 
-import { LogoDiv, LogoA } from '../../common/header/style'
+import { LogoDiv, LogoA } from '../home/header/style'
 
 import {
     Wrapper,

@@ -5,7 +5,7 @@ import {
     LogoDiv,
     OperationDiv, Post, PostDiv,
     SignAndLog, SignAndLogDiv, WrapperDiv
-} from '../../common/header/style'
+} from '../home/header/style'
 import {
     useHistory, Link,
     useParams

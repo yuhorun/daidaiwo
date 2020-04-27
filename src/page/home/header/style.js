@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import textLogo from '../../statics/image/DDWlogo.png'
+import textLogo from '../../../statics/image/DDWlogo.png'
 import { Link } from 'react-router-dom'
 
 export const WrapperDiv = styled.div`
@@ -22,7 +22,6 @@ export const CenterDiv = styled.div`
     width: 1170px;
     height: 70px;
     background-color: #fff;
-}
 `
 
 export const LogoDiv = styled.div`
@@ -32,9 +31,7 @@ export const LogoDiv = styled.div`
     min-height: 70px;
 `
 
-export const LogoA = styled.a.attrs({
-    href: '/'
-})`
+export const LogoA = styled(Link)`
     display: inline-block;
     width: 160px;
     height: 40px;
@@ -200,7 +197,6 @@ export const Post = styled(Link)`
     line-height: 15px;
     margin-left: 20px;
     padding: 7px 18px 6px;
-    transition: all 0.15s;
     &:hover {
         box-shadow: 0 2px 10px 1px rgba(57, 73, 76, 0.4),0 1px 2px rgba(57, 73, 76, 0.25);
         color: #fff;
@@ -216,7 +212,7 @@ export const NavDiv = styled.div`
     transition: height .35s ease-out;
     box-shadow: -900px 0 0 #f9f9f9, -900px -1px 0 #e0e0e0, 900px 0 0 #f9f9f9, 900px -1px 0 #e0e0e0, 0 -1px 0 #e0e0e0;
     &.Scrolled {
-    height:0;
+        height:0;
     }
 `
 export const NavCenterItemDiv = styled.div`
@@ -230,9 +226,7 @@ export const NavCenterItemDiv = styled.div`
     width: 1170px;
     height: 40px;
 `
-export const NavItemA = styled.a.attrs({
-    href: '/'
-})`
+export const NavItemL = styled(Link)`
     font-size: 12px;
     line-height: 12px;
     font-weight: 400;
