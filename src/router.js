@@ -9,6 +9,7 @@ import Home from './page/home'
 import Task from './page/task'
 import LogInAndSignup from './page/login_signup'
 import Post from './page/post'
+import Detail from './page/task/detail'
 
 export default function Routers () {
     return (
@@ -16,6 +17,7 @@ export default function Routers () {
             <Switch>
                 <Route exact path="/"><Home /></Route>
                 <Route path="/task/:subpage"><Task /></Route>
+                <Route path="/task/detail/:id"><Detail /></Route>
                 <Route path="/task"><Task /></Route>
                 <Route exact path="/post"><Post /></Route>
                 <Route path="/user/:action"><LogInAndSignup /></Route>

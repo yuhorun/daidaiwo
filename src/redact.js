@@ -1,5 +1,6 @@
 const ISLOGED = 'isLoged'
 
+// 定义全局state
 const initGlobalState = {
     isLoged: false
 }

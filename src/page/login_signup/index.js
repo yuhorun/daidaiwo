@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams, useHistory } from 'react-router-dom'
 import store from '../../store'
@@ -40,6 +40,22 @@ const LogInAndSignup = function () {
         verifyCode: '',
         signUpMsg: ''
 
+    })
+
+    useEffect(() => {
+        if (action === 'login') {
+            axios({
+                url: '/verifyCodeImage',
+                baseURL: 'http://localhost:8000',
+                method: 'GET',
+                withCredentials: true // cookie 相关  如不设置  无法发送cookie
+            }).then(res => {
+                if (res.data.code === 201) {
+                    store.dispatch(GlobalAction.isLoged(true))
+                    history.replace('/')
+                }
+            })
+        }
     })
 
     const handlerLogInBtn = () => {

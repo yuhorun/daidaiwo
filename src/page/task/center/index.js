@@ -55,7 +55,7 @@ const ContentCenter = (props) => {
                     <Text>{props.subPage.text}</Text>
                 </Tittle>
 
-                <TaskWraper>
+                <TaskWraper to={''}>
                     <TaskTittleDiv>
                         <TaskTittleA>高速公路场景下车辆检测</TaskTittleA>
                         <Btn >&#xe60d;</Btn>
@@ -78,7 +78,7 @@ const ContentCenter = (props) => {
                 {
                     taskList.map((value, index) => {
                         return (
-                            <TaskWraper key={index}>
+                            <TaskWraper key={index} to={'/task/detail/1'}>
                                 <TaskTittleDiv>
                                     <TaskTittleA>高速公路场景下车辆检测</TaskTittleA>
                                     <Btn >&#xe60d;</Btn>
